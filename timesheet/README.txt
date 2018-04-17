@@ -1,0 +1,1 @@
+﻿Showing simple Git merge
