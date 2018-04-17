@@ -1,1 +1,1 @@
-﻿Showing simple Git merge
+﻿Showing simple Git merge 2
