@@ -1,4 +1,4 @@
-﻿namespace FolderSweeper
+﻿namespace timesheet
 {
     partial class Form2
     {
@@ -28,82 +28,123 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.clockInButton = new System.Windows.Forms.Button();
+            this.clockOutButton = new System.Windows.Forms.Button();
+            this.openTimesheetButton = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.timeInLabel = new System.Windows.Forms.Label();
+            this.timeIn = new System.Windows.Forms.Label();
+            this.openJobSheetButton = new System.Windows.Forms.Button();
+            this.jobDropDown = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // clockInButton
             // 
-            this.button1.Location = new System.Drawing.Point(48, 65);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 34);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Clock In";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.clockInButton.Location = new System.Drawing.Point(3, 3);
+            this.clockInButton.Name = "clockInButton";
+            this.clockInButton.Size = new System.Drawing.Size(94, 34);
+            this.clockInButton.TabIndex = 0;
+            this.clockInButton.Text = "Clock In";
+            this.clockInButton.UseVisualStyleBackColor = true;
+            this.clockInButton.Click += new System.EventHandler(this.clockInButton_Click);
             // 
-            // button2
+            // clockOutButton
             // 
-            this.button2.Location = new System.Drawing.Point(226, 65);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 34);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Clock Out";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.flowLayoutPanel1.SetFlowBreak(this.clockOutButton, true);
+            this.clockOutButton.Location = new System.Drawing.Point(103, 3);
+            this.clockOutButton.Name = "clockOutButton";
+            this.clockOutButton.Size = new System.Drawing.Size(100, 34);
+            this.clockOutButton.TabIndex = 1;
+            this.clockOutButton.Text = "Clock Out";
+            this.clockOutButton.UseVisualStyleBackColor = true;
+            this.clockOutButton.Click += new System.EventHandler(this.clockOut_Click);
             // 
-            // label1
+            // openTimesheetButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 123);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 17);
-            this.label1.TabIndex = 2;
+            this.openTimesheetButton.Location = new System.Drawing.Point(3, 88);
+            this.openTimesheetButton.Name = "openTimesheetButton";
+            this.openTimesheetButton.Size = new System.Drawing.Size(151, 36);
+            this.openTimesheetButton.TabIndex = 4;
+            this.openTimesheetButton.Text = "Open Timesheet";
+            this.openTimesheetButton.UseVisualStyleBackColor = true;
+            this.openTimesheetButton.Click += new System.EventHandler(this.openTimesheetButton_Click);
             // 
-            // label2
+            // flowLayoutPanel1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(226, 122);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 17);
-            this.label2.TabIndex = 3;
+            this.flowLayoutPanel1.Controls.Add(this.clockInButton);
+            this.flowLayoutPanel1.Controls.Add(this.clockOutButton);
+            this.flowLayoutPanel1.Controls.Add(this.timeInLabel);
+            this.flowLayoutPanel1.Controls.Add(this.timeIn);
+            this.flowLayoutPanel1.Controls.Add(this.openTimesheetButton);
+            this.flowLayoutPanel1.Controls.Add(this.openJobSheetButton);
+            this.flowLayoutPanel1.Controls.Add(this.jobDropDown);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(385, 220);
+            this.flowLayoutPanel1.TabIndex = 5;
             // 
-            // button3
+            // timeInLabel
             // 
-            this.button3.Location = new System.Drawing.Point(110, 162);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(151, 36);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Open Timesheet";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.timeInLabel.Location = new System.Drawing.Point(3, 40);
+            this.timeInLabel.Name = "timeInLabel";
+            this.timeInLabel.Size = new System.Drawing.Size(106, 45);
+            this.timeInLabel.TabIndex = 5;
+            this.timeInLabel.Text = "Time In:";
+            // 
+            // timeIn
+            // 
+            this.timeIn.Location = new System.Drawing.Point(115, 40);
+            this.timeIn.Name = "timeIn";
+            this.timeIn.Size = new System.Drawing.Size(128, 40);
+            this.timeIn.TabIndex = 7;
+            // 
+            // openJobSheetButton
+            // 
+            this.flowLayoutPanel1.SetFlowBreak(this.openJobSheetButton, true);
+            this.openJobSheetButton.Location = new System.Drawing.Point(160, 88);
+            this.openJobSheetButton.Name = "openJobSheetButton";
+            this.openJobSheetButton.Size = new System.Drawing.Size(134, 31);
+            this.openJobSheetButton.TabIndex = 9;
+            this.openJobSheetButton.Text = "Open Jobs List";
+            this.openJobSheetButton.UseVisualStyleBackColor = true;
+            this.openJobSheetButton.Click += new System.EventHandler(this.openJobSheetButton_Click);
+            // 
+            // jobDropDown
+            // 
+            this.jobDropDown.AllowDrop = true;
+            this.jobDropDown.FormattingEnabled = true;
+            this.jobDropDown.Location = new System.Drawing.Point(3, 130);
+            this.jobDropDown.Name = "jobDropDown";
+            this.jobDropDown.Size = new System.Drawing.Size(141, 24);
+            this.jobDropDown.TabIndex = 8;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 244);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
-
         }
+
+        private System.Windows.Forms.Button openJobSheetButton;
+
+        private System.Windows.Forms.ComboBox jobDropDown;
+
+        private System.Windows.Forms.Label timeIn;
+
+        private System.Windows.Forms.Label timeInLabel;
+
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button clockInButton;
+        private System.Windows.Forms.Button clockOutButton;
+        private System.Windows.Forms.Button openTimesheetButton;
     }
 }

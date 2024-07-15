@@ -1,53 +1,70 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FolderSweeper
+namespace timesheet
 {
     public partial class Form2 : Form
     {
-        DateTime timein, timeout;
-        string dir = "C:\\Users\\Public\\TestFolder\\";
-        string path;
+        private DateTime _timeIn, _timeOut;
+        private readonly List<string> _jobs= [];
+        private const string _dir = "C:\\dev\\timesheet";
+        private readonly string _file = Path.Combine(_dir, "timesheet.csv");
+        private readonly string _jobsPath = Path.Combine(_dir, "jobs.txt");
+
         public Form2()
         {
-            path = dir + "timesheet.txt";
+            try
+            {
+                var reader = new StreamReader(File.OpenRead(_jobsPath));
+                var line = reader.ReadLine();
+                while (line != null)
+                {
+                    _jobs.Add(line);
+                    line = reader.ReadLine();
+                }
+
+                reader.Close();
+            }
+            catch (FileNotFoundException)
+            {
+                File.Create(_jobsPath).Close();
+            }
+
             InitializeComponent();
+            jobDropDown.Items.AddRange(_jobs.ToArray());
             Text = "Time Clock App";
-            Icon = timesheet.Properties.Resources.ClockIcon;
+            Icon = Properties.Resources.ClockIcon;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void clockOut_Click(object sender, EventArgs e)
         {
-            timeout = DateTime.Now;
-            label2.Text = timeout.ToShortTimeString();
-            string s = $"date: {DateTime.Today.ToShortDateString()}; \tin: {timein.ToShortTimeString()}; \tout: {timeout.ToShortTimeString()}; \telapsed: {(timeout - timein).TotalHours}{Environment.NewLine}";
-            if (File.Exists(path)) File.AppendAllText(path, s);
+            _timeOut = DateTime.Now;
+            var s = $"{DateTime.Today.ToShortDateString()};{_timeIn.ToShortTimeString()};{_timeOut.ToShortTimeString()};{(_timeOut - _timeIn).TotalHours};{jobDropDown.SelectedItem}{Environment.NewLine}";
+            if (File.Exists(_file)) File.AppendAllText(_file, s);
             else
             {
-                Directory.CreateDirectory(dir);
-                File.WriteAllText(path, s);
+                Directory.CreateDirectory(_dir);
+                File.WriteAllText(_file, s);
             }
-            
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void openTimesheetButton_Click(object sender, EventArgs e)
         {
-            Process.Start(path);
+            Process.Start(_file);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void clockInButton_Click(object sender, EventArgs e)
         {
-            timein = DateTime.Now;
-            label1.Text = timein.ToShortTimeString();
+            _timeIn = DateTime.Now;
+            timeIn.Text = _timeIn.ToShortTimeString();
+        }
+
+        private void openJobSheetButton_Click(object sender, EventArgs e)
+        {
+            Process.Start(_jobsPath);
         }
     }
 }
