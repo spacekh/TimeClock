@@ -98,6 +98,7 @@
             this.timeIn.Name = "timeIn";
             this.timeIn.Size = new System.Drawing.Size(128, 40);
             this.timeIn.TabIndex = 7;
+            this.timeIn.Click += new System.EventHandler(this.timeIn_Click);
             // 
             // openJobSheetButton
             // 

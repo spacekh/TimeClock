@@ -42,7 +42,7 @@ namespace timesheet
         private void clockOut_Click(object sender, EventArgs e)
         {
             _timeOut = DateTime.Now;
-            var s = $"{DateTime.Today.ToShortDateString()};{_timeIn.ToShortTimeString()};{_timeOut.ToShortTimeString()};{(_timeOut - _timeIn).TotalHours};{jobDropDown.SelectedItem}{Environment.NewLine}";
+            var s = $"{_timeOut:M'/'dd'/'yyyy};{_timeIn.ToShortTimeString()};{_timeOut.ToShortTimeString()};{(_timeOut - _timeIn).TotalHours};{jobDropDown.SelectedItem}{Environment.NewLine}";
             if (File.Exists(_file)) File.AppendAllText(_file, s);
             else
             {
@@ -65,6 +65,16 @@ namespace timesheet
         private void openJobSheetButton_Click(object sender, EventArgs e)
         {
             Process.Start(_jobsPath);
+        }
+
+        private void timeIn_Click(object sender, EventArgs e)
+        {
+            var f = new TimePicker(_timeIn);
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                _timeIn = f.dateTimePicker.Value;
+                timeIn.Text = _timeIn.ToShortTimeString();
+            }
         }
     }
 }
