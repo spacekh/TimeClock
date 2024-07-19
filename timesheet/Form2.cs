@@ -42,7 +42,25 @@ namespace timesheet
         private void clockOut_Click(object sender, EventArgs e)
         {
             _timeOut = DateTime.Now;
-            var s = $"{_timeOut:M'/'dd'/'yyyy};{_timeIn.ToShortTimeString()};{_timeOut.ToShortTimeString()};{(_timeOut - _timeIn).TotalHours};{jobDropDown.SelectedItem}{Environment.NewLine}";
+            var s="";
+            if (_timeIn.Date < _timeOut.Date)
+            {
+                var timeInForDay = _timeIn;
+                var midnight = _timeIn.Date.AddDays(1);
+                while (midnight.Date <= _timeOut.Date)
+                {
+                    var elapsed = (midnight - timeInForDay).TotalHours;
+                    s += $"{timeInForDay:M'/'dd'/'yyyy};{timeInForDay.ToShortTimeString()};{midnight.ToShortTimeString()};{elapsed};{jobDropDown.SelectedItem}{Environment.NewLine}";
+                    timeInForDay = midnight;
+                    midnight = midnight.AddDays(1);
+                }
+
+                s += $"{_timeOut:M'/'dd'/'yyyy};{timeInForDay.ToShortTimeString()};{_timeOut.ToShortTimeString()};{(_timeOut - timeInForDay).TotalHours};{jobDropDown.SelectedItem}{Environment.NewLine}";
+            }
+            else
+            {
+                s = $"{_timeOut:M'/'dd'/'yyyy};{_timeIn.ToShortTimeString()};{_timeOut.ToShortTimeString()};{(_timeOut - _timeIn).TotalHours};{jobDropDown.SelectedItem}{Environment.NewLine}";
+            }
             if (File.Exists(_file)) File.AppendAllText(_file, s);
             else
             {
