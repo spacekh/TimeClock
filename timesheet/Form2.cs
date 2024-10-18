@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
+#pragma warning disable CA1416
 
 namespace timesheet
 {
