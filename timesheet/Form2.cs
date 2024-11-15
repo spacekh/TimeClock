@@ -72,7 +72,7 @@ namespace timesheet
 
         private void openTimesheetButton_Click(object sender, EventArgs e)
         {
-            Process.Start(_file);
+            Process.Start(new ProcessStartInfo{UseShellExecute = true, FileName = _file});
         }
 
         private void clockInButton_Click(object sender, EventArgs e)
@@ -83,7 +83,7 @@ namespace timesheet
 
         private void openJobSheetButton_Click(object sender, EventArgs e)
         {
-            Process.Start(_jobsPath);
+            Process.Start(new ProcessStartInfo{UseShellExecute = true, FileName = _jobsPath});
         }
 
         private void timeIn_Click(object sender, EventArgs e)
