@@ -28,108 +28,119 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.clockInButton = new System.Windows.Forms.Button();
-            this.clockOutButton = new System.Windows.Forms.Button();
-            this.openTimesheetButton = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.timeInLabel = new System.Windows.Forms.Label();
-            this.timeIn = new System.Windows.Forms.Label();
-            this.openJobSheetButton = new System.Windows.Forms.Button();
-            this.jobDropDown = new System.Windows.Forms.ComboBox();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.SuspendLayout();
+            clockInButton = new System.Windows.Forms.Button();
+            clockOutButton = new System.Windows.Forms.Button();
+            openTimesheetButton = new System.Windows.Forms.Button();
+            flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            timeInLabel = new System.Windows.Forms.Label();
+            timeIn = new System.Windows.Forms.Label();
+            openJobSheetButton = new System.Windows.Forms.Button();
+            jobDropDown = new System.Windows.Forms.ComboBox();
+            flowLayoutPanel1.SuspendLayout();
+            SuspendLayout();
             // 
             // clockInButton
             // 
-            this.clockInButton.Location = new System.Drawing.Point(3, 3);
-            this.clockInButton.Name = "clockInButton";
-            this.clockInButton.Size = new System.Drawing.Size(94, 34);
-            this.clockInButton.TabIndex = 0;
-            this.clockInButton.Text = "Clock In";
-            this.clockInButton.UseVisualStyleBackColor = true;
-            this.clockInButton.Click += new System.EventHandler(this.clockInButton_Click);
+            clockInButton.Location = new System.Drawing.Point(14, 14);
+            clockInButton.Margin = new System.Windows.Forms.Padding(2);
+            clockInButton.Name = "clockInButton";
+            clockInButton.Size = new System.Drawing.Size(130, 30);
+            clockInButton.TabIndex = 0;
+            clockInButton.Text = "Clock In";
+            clockInButton.UseVisualStyleBackColor = true;
+            clockInButton.Click += clockInButton_Click;
             // 
             // clockOutButton
             // 
-            this.flowLayoutPanel1.SetFlowBreak(this.clockOutButton, true);
-            this.clockOutButton.Location = new System.Drawing.Point(103, 3);
-            this.clockOutButton.Name = "clockOutButton";
-            this.clockOutButton.Size = new System.Drawing.Size(100, 34);
-            this.clockOutButton.TabIndex = 1;
-            this.clockOutButton.Text = "Clock Out";
-            this.clockOutButton.UseVisualStyleBackColor = true;
-            this.clockOutButton.Click += new System.EventHandler(this.clockOut_Click);
+            flowLayoutPanel1.SetFlowBreak(clockOutButton, true);
+            clockOutButton.Location = new System.Drawing.Point(148, 14);
+            clockOutButton.Margin = new System.Windows.Forms.Padding(2);
+            clockOutButton.Name = "clockOutButton";
+            clockOutButton.Size = new System.Drawing.Size(130, 30);
+            clockOutButton.TabIndex = 1;
+            clockOutButton.Text = "Clock Out";
+            clockOutButton.UseVisualStyleBackColor = true;
+            clockOutButton.Click += clockOut_Click;
             // 
             // openTimesheetButton
             // 
-            this.openTimesheetButton.Location = new System.Drawing.Point(3, 88);
-            this.openTimesheetButton.Name = "openTimesheetButton";
-            this.openTimesheetButton.Size = new System.Drawing.Size(151, 36);
-            this.openTimesheetButton.TabIndex = 4;
-            this.openTimesheetButton.Text = "Open Timesheet";
-            this.openTimesheetButton.UseVisualStyleBackColor = true;
-            this.openTimesheetButton.Click += new System.EventHandler(this.openTimesheetButton_Click);
+            openTimesheetButton.Location = new System.Drawing.Point(14, 91);
+            openTimesheetButton.Margin = new System.Windows.Forms.Padding(2);
+            openTimesheetButton.Name = "openTimesheetButton";
+            openTimesheetButton.Size = new System.Drawing.Size(130, 30);
+            openTimesheetButton.TabIndex = 4;
+            openTimesheetButton.Text = "Open Timesheet";
+            openTimesheetButton.UseVisualStyleBackColor = true;
+            openTimesheetButton.Click += openTimesheetButton_Click;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.clockInButton);
-            this.flowLayoutPanel1.Controls.Add(this.clockOutButton);
-            this.flowLayoutPanel1.Controls.Add(this.timeInLabel);
-            this.flowLayoutPanel1.Controls.Add(this.timeIn);
-            this.flowLayoutPanel1.Controls.Add(this.openTimesheetButton);
-            this.flowLayoutPanel1.Controls.Add(this.openJobSheetButton);
-            this.flowLayoutPanel1.Controls.Add(this.jobDropDown);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(385, 220);
-            this.flowLayoutPanel1.TabIndex = 5;
+            flowLayoutPanel1.Controls.Add(clockInButton);
+            flowLayoutPanel1.Controls.Add(clockOutButton);
+            flowLayoutPanel1.Controls.Add(timeInLabel);
+            flowLayoutPanel1.Controls.Add(timeIn);
+            flowLayoutPanel1.Controls.Add(openTimesheetButton);
+            flowLayoutPanel1.Controls.Add(openJobSheetButton);
+            flowLayoutPanel1.Controls.Add(jobDropDown);
+            flowLayoutPanel1.Location = new System.Drawing.Point(10, 12);
+            flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            flowLayoutPanel1.Size = new System.Drawing.Size(294, 207);
+            flowLayoutPanel1.TabIndex = 5;
             // 
             // timeInLabel
             // 
-            this.timeInLabel.Location = new System.Drawing.Point(3, 40);
-            this.timeInLabel.Name = "timeInLabel";
-            this.timeInLabel.Size = new System.Drawing.Size(106, 45);
-            this.timeInLabel.TabIndex = 5;
-            this.timeInLabel.Text = "Time In:";
+            timeInLabel.Location = new System.Drawing.Point(14, 46);
+            timeInLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            timeInLabel.Name = "timeInLabel";
+            timeInLabel.Size = new System.Drawing.Size(93, 43);
+            timeInLabel.TabIndex = 5;
+            timeInLabel.Text = "Time In:";
             // 
             // timeIn
             // 
-            this.timeIn.Location = new System.Drawing.Point(115, 40);
-            this.timeIn.Name = "timeIn";
-            this.timeIn.Size = new System.Drawing.Size(128, 40);
-            this.timeIn.TabIndex = 7;
-            this.timeIn.Click += new System.EventHandler(this.timeIn_Click);
+            timeIn.Location = new System.Drawing.Point(111, 46);
+            timeIn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            timeIn.Name = "timeIn";
+            timeIn.Size = new System.Drawing.Size(112, 37);
+            timeIn.TabIndex = 7;
+            timeIn.Click += timeIn_Click;
             // 
             // openJobSheetButton
             // 
-            this.flowLayoutPanel1.SetFlowBreak(this.openJobSheetButton, true);
-            this.openJobSheetButton.Location = new System.Drawing.Point(160, 88);
-            this.openJobSheetButton.Name = "openJobSheetButton";
-            this.openJobSheetButton.Size = new System.Drawing.Size(134, 31);
-            this.openJobSheetButton.TabIndex = 9;
-            this.openJobSheetButton.Text = "Open Jobs List";
-            this.openJobSheetButton.UseVisualStyleBackColor = true;
-            this.openJobSheetButton.Click += new System.EventHandler(this.openJobSheetButton_Click);
+            flowLayoutPanel1.SetFlowBreak(openJobSheetButton, true);
+            openJobSheetButton.Location = new System.Drawing.Point(148, 91);
+            openJobSheetButton.Margin = new System.Windows.Forms.Padding(2);
+            openJobSheetButton.Name = "openJobSheetButton";
+            openJobSheetButton.Size = new System.Drawing.Size(130, 30);
+            openJobSheetButton.TabIndex = 9;
+            openJobSheetButton.Text = "Open Jobs List";
+            openJobSheetButton.UseVisualStyleBackColor = true;
+            openJobSheetButton.Click += openJobSheetButton_Click;
             // 
             // jobDropDown
             // 
-            this.jobDropDown.AllowDrop = true;
-            this.jobDropDown.FormattingEnabled = true;
-            this.jobDropDown.Location = new System.Drawing.Point(3, 130);
-            this.jobDropDown.Name = "jobDropDown";
-            this.jobDropDown.Size = new System.Drawing.Size(141, 24);
-            this.jobDropDown.TabIndex = 8;
+            jobDropDown.AllowDrop = true;
+            jobDropDown.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            jobDropDown.FormattingEnabled = true;
+            jobDropDown.Location = new System.Drawing.Point(14, 125);
+            jobDropDown.Margin = new System.Windows.Forms.Padding(2);
+            jobDropDown.Name = "jobDropDown";
+            jobDropDown.Size = new System.Drawing.Size(264, 23);
+            jobDropDown.TabIndex = 8;
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 244);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "Form2";
-            this.Text = "Form2";
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(314, 228);
+            Controls.Add(flowLayoutPanel1);
+            Margin = new System.Windows.Forms.Padding(2);
+            Name = "Form2";
+            Text = "Form2";
+            flowLayoutPanel1.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         private System.Windows.Forms.Button openJobSheetButton;
