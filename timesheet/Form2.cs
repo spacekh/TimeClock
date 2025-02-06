@@ -11,9 +11,9 @@ namespace timesheet
     {
         private DateTime _timeIn, _timeOut;
         private readonly List<string> _jobs= [];
-        private const string _dir = "C:\\dev\\timesheet";
-        private readonly string _file = Path.Combine(_dir, "timesheet.csv");
-        private readonly string _jobsPath = Path.Combine(_dir, "jobs.txt");
+        private static readonly string _dir = $@"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}\timesheet";
+        private static readonly string _file = Path.Combine(_dir, "timesheet.csv");
+        private static readonly string _jobsPath = Path.Combine(_dir, "jobs.txt");
 
         public Form2()
         {

@@ -6,8 +6,12 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <StartupObject>timesheet.Program</StartupObject>
+    <ApplicationIcon>clock.png.ico</ApplicationIcon>
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="clock.png.ico" />
     <Content Include="README.txt" />
   </ItemGroup>
   <ItemGroup>
